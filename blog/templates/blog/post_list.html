@@ -2,21 +2,16 @@
     <head>
         <title>HELOOOO</title>
     </head>
-    <body>
-        <div>
-            <h1><a href="">HELLOOO</a></h1>
-        </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">BOM DIA Django Girls</a></h2>
-            <p>Você já sentiu como se o mundo fosse cada vez mais sobre tecnologia e que de alguma forma você tenha ficado pra trás? Você já imaginou como seria criar um website mas nunca teve motivação suficiente para começar? Você já pensou que o mundo do software é complicado demais até para tentar fazer alguma coisa sozinho?</p>
-        </div>
+    <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">NOVO POST</a></h2>
-            <p>Quando você tiver terminado o tutorial você terá uma aplicação web simples e funcional: seu próprio blog. Nós vamos mostrar como colocá-lo online, para que outros vejam seu trabalho!</p>
-        </div>
-    </body>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </html>
